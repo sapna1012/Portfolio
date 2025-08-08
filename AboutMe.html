@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive About Me</title>
+  <link rel="stylesheet" href="AboutMe.css"/>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <a href="Home.html">Home</a>
+      <a href="AboutMe.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Project.html">Project</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="photos/MyNewImage.jpg" alt="Profile Image"/>
+    </div>
+    <div class="about-content">
+      <h2>About <span>Me</span></h2>
+      <h3>Full Stack Developer!</h3>
+      <p>
+        I'm an aspiring Full-Stack Developer with a strong interest
+        in building responsive, scalable, and user-friendly web applications. I have hands-on experience in front-end and back-end technologies.
+      </p>
+      <p>
+        I believe a well-designed website should not only look good but also provide a smooth and enjoyable
+        experience for visitors.
+      </p>
+      <a href="eductional.html" class="btn">More About Me</a>
+    </div>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    const overlay = document.getElementById('overlay');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      overlay.classList.toggle('active');
+      menuIcon.classList.toggle('bx-x');
+    });
+
+    overlay.addEventListener('click', () => {
+      navbar.classList.remove('active');
+      overlay.classList.remove('active');
+      menuIcon.classList.remove('bx-x');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('active');
+        menuIcon.classList.remove('bx-x');
+      });
+    });
+  </script>
+
+</body>
+</html>

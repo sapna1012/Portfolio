@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="project.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <a href="Home.html">Home</a>
+      <a href="AboutMe.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Project.html" class="active">Project</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="portfolio-section">
+    <h2 class="section-title">Latest <span>Project</span></h2>
+    <div class="project-gallery">
+      <div class="project-item">
+        <img src="photos/smart_Rest.jpg" alt="Project 1">
+        <div class="project-overlay">
+          <h3>Smart Restaurant Ordering System</h3>
+          <p>Web-based system using QR code to order, AI dish recommendations, MySQL tracking, and kitchen dashboard.</p>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <img src="photos/JarvisImg.jpg" alt="Project 2">
+        <div class="project-overlay">
+          <h3>AI Personal Assistant</h3>
+          <p>Python-based assistant for automation, speech, browsing, and task management with AI features.</p>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <img src="photos/chatifyimg.png" alt="Project 3">
+        <div class="project-overlay">
+          <h3>Real Time Chat Application </h3>
+          
+          <p>A real-time group chat application allows multiple users to send and receive messages instantly </p>
+        <p>Join/leave notifications.Real-time messaging using WebSockets ( Socket.IO)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+    const overlay = document.getElementById("overlay");
+
+    menuIcon.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+      overlay.classList.toggle("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      navbar.classList.remove("active");
+      overlay.classList.remove("show");
+    });
+  </script>
+</body>
+
+</html>

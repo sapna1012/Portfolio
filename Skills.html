@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Skills.css" />
+</head>
+
+<body>
+  <!-- Overlay (backside blur) -->
+  <div class="overlay" id="overlay"></div>
+
+  <header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar" id="navbar">
+      <a href="Home.html">Home</a>
+      <a href="AboutMe.html">About</a>
+      <a href="Services.html">Services</a>
+      <a href="Skills.html" class="active">Skills</a>
+      <a href="Project.html">Project</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="skills">
+    <h2 class="heading">My <span>Skills</span></h2>
+
+    <div class="skills-container">
+
+      <div class="technical-skills">
+        <h3>Technical Skills</h3>
+
+        <div class="skill-bar">
+          <div class="info"><span><i class='bx bxl-html5'></i> HTML</span><span>90%</span></div>
+          <div class="bar"><div class="progress html"></div></div>
+        </div>
+
+        <div class="skill-bar">
+          <div class="info"><span><i class='bx bxl-css3'></i> CSS</span><span>60%</span></div>
+          <div class="bar"><div class="progress css"></div></div>
+        </div>
+
+        <div class="skill-bar">
+          <div class="info"><span><i class='bx bxl-javascript'></i> Javascript</span><span>85%</span></div>
+          <div class="bar"><div class="progress js"></div></div>
+        </div>
+
+        <div class="skill-bar">
+          <div class="info"><span><i class='bx bxl-python'></i> Python</span><span>50%</span></div>
+          <div class="bar"><div class="progress python"></div></div>
+        </div>
+
+        <div class="skill-bar">
+          <div class="info"><span><i class='bx bxl-java'></i> Java</span><span>75%</span></div>
+          <div class="bar"><div class="progress react"></div></div>
+        </div>
+      </div>
+
+      <div class="professional-skills">
+        <h3>Professional Skills</h3>
+
+        <div class="circle-container">
+          <div class="circle">
+            <div class="outer">
+              <div class="ring" style="--percent: 90;">
+                <div class="inner"><span>90%</span></div>
+              </div>
+            </div>
+            <p>Creativity</p>
+          </div>
+
+          <div class="circle">
+            <div class="outer">
+              <div class="ring" style="--percent: 65;">
+                <div class="inner"><span>65%</span></div>
+              </div>
+            </div>
+            <p>Communication</p>
+          </div>
+
+          <div class="circle">
+            <div class="outer">
+              <div class="ring" style="--percent: 75;">
+                <div class="inner"><span>75%</span></div>
+              </div>
+            </div>
+            <p>Problem Solving</p>
+          </div>
+
+          <div class="circle">
+            <div class="outer">
+              <div class="ring" style="--percent: 85;">
+                <div class="inner"><span>85%</span></div>
+              </div>
+            </div>
+            <p>Team Work</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById('menu-icon');
+    const navbar = document.getElementById('navbar');
+    const overlay = document.getElementById('overlay');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    menuIcon.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+      overlay.classList.toggle('show');
+      menuIcon.classList.toggle('bx-x');
+    });
+
+    overlay.addEventListener('click', () => {
+      navbar.classList.remove('active');
+      overlay.classList.remove('show');
+      menuIcon.classList.remove('bx-x');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove('active');
+        overlay.classList.remove('show');
+        menuIcon.classList.remove('bx-x');
+      });
+    });
+  </script>
+</body>
+
+</html>

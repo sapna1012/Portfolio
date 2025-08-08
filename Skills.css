@@ -1,0 +1,235 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #081b29;
+  color: #fff;
+}
+
+/* ----- Header ----- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0a2742;
+  padding: 1rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1001;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+#menu-icon {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  z-index: 1002;
+}
+
+/* Navbar default style */
+.navbar {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #0ef;
+}
+
+/* Responsive Hamburger */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: #0a2742;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    transition: 0.3s ease-in-out;
+    z-index: 1002;
+  }
+
+  .navbar.active {
+    right: 0;
+  }
+}
+
+/* Blur overlay when menu opens */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+#skills {
+    padding: 100px 20px 60px;
+    text-align: center;
+}
+.heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.heading span {
+    color: #00ffff;
+}
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+}
+.technical-skills, .professional-skills {
+    background: #162334;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 350px;
+    max-width: 100%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+.technical-skills h3, .professional-skills h3 {
+    margin-bottom: 1.5rem;
+    text-decoration: underline;
+}
+.skill-bar {
+    margin-bottom: 1.2rem;
+}
+.skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.skill-bar .bar {
+    width: 100%;
+    background: #000;
+    height: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skill-bar .progress {
+    height: 100%;
+    background: #00ffff;
+    width: 0;
+    animation: progressAnim 2s forwards;
+}
+.progress.html { width: 90%; }
+.progress.css { width: 60%; }
+.progress.js { width: 85%; }
+.progress.python { width: 50%; }
+.progress.react { width: 75%; }
+@keyframes progressAnim {
+    from { width: 0; }
+}
+.circle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+ .circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.outer {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(#00ffff calc(var(--percent) * 1%), #000 calc(var(--percent) * 1%));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Controls thickness of ring */
+    box-sizing: border-box;
+    animation: fillAnimation 2s forwards;
+}
+
+.inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #162334;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.circle p {
+    margin-top: 0.5rem;
+    color: #ccc;
+}
+
+@keyframes fillAnimation {
+    0% {
+        background: conic-gradient(#00ffff 0%, #000 0%);
+    }
+    100% {
+        background: conic-gradient(#00ffff calc(var(--percent) * 1%), #000 calc(var(--percent) * 1%));
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

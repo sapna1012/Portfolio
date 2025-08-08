@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Portfolio</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="Services.css">
+</head>
+<body>
+
+  <!-- Header/Navbar -->
+  <header class="header">
+    <a href="#" class="logo">Portfolio.</a>
+    <i class='bx bx-menu' id="menu-icon"></i>
+
+    <nav class="navbar" id="navbar">
+      <a href="Home.html">Home</a>
+      <a href="AboutMe.html">About</a>
+      <a href="Services.html" class="active">Services</a>
+      <a href="Skills.html">Skills</a>
+      <a href="Project.html">Project</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Overlay for blur -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2 class="heading">My <span>Services</span></h2>
+
+    <div class="services-container">
+      <div class="services-box">
+        <i class='bx bx-code-alt'></i>
+        <h3>UI/UX Design</h3>
+        <p>Creating intuitive and visually engaging user interfaces and an enhanced user experience across all devices</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+
+      <div class="services-box">
+        <i class='bx bx-crop'></i>
+        <h3>Web Development</h3>
+        <p>Designing and developing responsive, user-friendly websites using HTML, CSS, JavaScript, and modern frameworks.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+
+      <div class="services-box">
+        <i class='bx bxl-apple'></i>
+        <h3>Full-Stack Development</h3>
+        <p>Building complete web applications from frontend to backend with database integration and REST APIs.</p>
+        <a href="#" class="btn">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const menuIcon = document.getElementById("menu-icon");
+    const navbar = document.getElementById("navbar");
+    const overlay = document.getElementById("overlay");
+
+    menuIcon.onclick = () => {
+      navbar.classList.toggle("active");
+      menuIcon.classList.toggle("bx-x");
+      overlay.classList.toggle("show");
+    };
+
+    document.querySelectorAll('.navbar a').forEach(link => {
+      link.addEventListener('click', () => {
+        navbar.classList.remove("active");
+        menuIcon.classList.remove("bx-x");
+        overlay.classList.remove("show");
+      });
+    });
+
+    overlay.onclick = () => {
+      navbar.classList.remove("active");
+      menuIcon.classList.remove("bx-x");
+      overlay.classList.remove("show");
+    };
+  </script>
+
+</body>
+</html>

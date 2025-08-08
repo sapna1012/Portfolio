@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="Home.css">
+</head>
+
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+
+        <nav class="navbar" id="navbar">
+            <a href="Home.html">Home</a>
+            <a href="AboutMe.html">About</a>
+            <a href="Services.html">Services</a>
+            <a href="Skills.html">Skill</a>
+            <a href="Project.html">Projects</a>
+            <a href="Contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Add this for blurred overlay -->
+    <div class="overlay" id="overlay"></div>
+
+
+    <section class="home">
+
+        <div class="about-img">
+            <div class="image-container">
+                <img src="photos/MyNewImage.jpg" alt="Profile Image">
+            </div>
+        </div>
+
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Sapna Singh</h1>
+            <h3>And I'm a <span class="text"></span></h3>
+            <p>
+                Passionate about building for full-stack development and real-world applications.
+                Eager to learn, grow, and solve problems through efficient and clean code.
+                I'm driven by curiosity and love turning ideas into reality through code.
+            </p>
+
+            <div class="home-sci">
+                <a href="https://github.com/sapna1012"><i class="bx bxl-github"></i></a>
+                <a href="https://www.linkedin.com/in/sapna-singh-248841351"><i class="bx bxl-linkedin"></i></a>
+            </div>
+            <a href="eductional.html" class="btn-box">More About Me</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed(".text", {
+            strings: ["Aspiring Full-Stack Developer", "  Passionate Problem Solver"],
+            typeSpeed: 100,
+            backSpeed: 100,
+            backDelay: 1000,
+            loop: true
+        });
+
+
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        const overlay = document.getElementById('overlay');
+        const navLinks = document.querySelectorAll('.navbar a');
+
+        // Toggle Menu
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuIcon.classList.toggle('bx-x'); // toggle to X icon
+        });
+
+        // Close menu on overlay click
+        overlay.addEventListener('click', () => {
+            navbar.classList.remove('active');
+            overlay.classList.remove('active');
+            menuIcon.classList.remove('bx-x');
+        });
+
+        // Close menu when any link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+                overlay.classList.remove('active');
+                menuIcon.classList.remove('bx-x');
+            });
+        });
+    </script>
+</body>
+
+</html>
