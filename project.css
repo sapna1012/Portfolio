@@ -111,6 +111,7 @@ body {
 .section-title {
   font-size: 32px;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .section-title span {
